@@ -8,7 +8,7 @@ const MainScreen = () => {
 
   return (
     <ImageBackground
-      source={require('../assets/images/glitt')} // Ensure this image is in assets
+      source={require('../assets/images/glitter.jpg')} // Ensure this image is in assets
       style={styles.background}
     >
       <View style={styles.overlay}>
