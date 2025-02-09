@@ -29,11 +29,19 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
+      <Stack screenOptions={{ headerShown: false }}>  {/* Hide header for all screens */}
+        {/* <Stack.Screen name="(tabs)" /> Your Tab Navigation */}
+        {/* <Stack.Screen name="signIn" />  */}
+        {/* Sign In Screen */}
+        {/* <Stack.Screen name="signup" />  */}
+        {/* Sign Up Screen */}
+        {/* <Stack.Screen name="know-more" /> */}
+         {/* Know More Page */}
+        {/* <Stack.Screen name="+not-found" /> */}
+         {/* Default Not Found Page */}
       </Stack>
       <StatusBar style="auto" />
     </ThemeProvider>
   );
 }
+
