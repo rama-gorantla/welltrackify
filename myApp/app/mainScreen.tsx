@@ -8,7 +8,7 @@ const MainScreen = () => {
 
   return (
     <ImageBackground
-      source={require('../assets/images/glitter.jpg')} // Ensure this image is in assets
+      // source={require('../assets/images/glitter.jpg')} // Ensure this image is in assets
       style={styles.background}
     >
       <View style={styles.overlay}>
@@ -130,10 +130,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 1,
     backgroundColor: '#aaa', // Line color
-    // top: 160,
-    // marginBottom: 160,
-    position:'absolute',
-    bottom: 160,
+   margin: 20,
   },
   signupWrapper: {
     marginTop: 10,
@@ -142,15 +139,11 @@ const styles = StyleSheet.create({
   signupText: {
     color: '#aaa',
     fontSize: 14,
-    position:'absolute',
-    top: 100,
   },
   signupNow: {
     color: '#C22EFF',
     fontWeight: 'bold',
     textDecorationLine: 'underline',
-    position:'absolute',
-    top: 124,
   },
 });
 
