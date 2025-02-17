@@ -3,7 +3,7 @@ import {
   View, Text, StyleSheet, TextInput, TouchableOpacity,
   KeyboardAvoidingView, ScrollView, Platform, TouchableWithoutFeedback, Keyboard
 } from 'react-native';
-import { useRouter } from 'expo-router';
+import { Link, useRouter } from 'expo-router';
 import { FontAwesome, Feather } from '@expo/vector-icons';
 
 const SignIn = () => {
@@ -99,7 +99,7 @@ const SignIn = () => {
             {/* Forgot Password */}
             <View style={styles.forgotPasswordContainer}>
               <TouchableOpacity>
-                <Text style={styles.forgotPassword}>Forgot Password?</Text>
+               <Link style={styles.forgotPassword} href={"/forgotPassword"}> Forgot Password?</Link>
               </TouchableOpacity>
             </View>
 
