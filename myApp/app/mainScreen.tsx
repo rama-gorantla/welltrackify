@@ -1,7 +1,14 @@
-import React from 'react';
-import { View, Text, StyleSheet, ImageBackground, TouchableOpacity } from 'react-native';
-import { useRouter } from 'expo-router';
-import { FontAwesome } from '@expo/vector-icons';
+import React from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  ImageBackground,
+  TouchableOpacity,
+  Linking,
+} from "react-native";
+import { useRouter } from "expo-router";
+import { FontAwesome } from "@expo/vector-icons";
 
 const MainScreen = () => {
   const router = useRouter();
@@ -20,7 +27,10 @@ const MainScreen = () => {
         </Text>
 
         {/* Sign In Button */}
-        <TouchableOpacity style={styles.signInButton} onPress={() => router.push('/signIn')}>
+        <TouchableOpacity
+          style={styles.signInButton}
+          onPress={() => router.push("/signIn")}
+        >
           <Text style={styles.signInText}>SIGN IN</Text>
         </TouchableOpacity>
 
@@ -36,7 +46,9 @@ const MainScreen = () => {
         </View>
 
         {/* "Know More About Welltrackify" Route */}
-        <TouchableOpacity onPress={() => router.push('/signUp')}>
+        <TouchableOpacity
+          onPress={() => Linking.openURL("https://welltrackify.vyjayanthi.in/")}
+        >
           <Text style={styles.knowMoreText}>Know More About Welltrackify</Text>
         </TouchableOpacity>
 
@@ -44,7 +56,10 @@ const MainScreen = () => {
         <View style={styles.divider} />
 
         {/* Sign Up Link */}
-        <TouchableOpacity style={styles.signupWrapper} onPress={() => router.push('/signUp')}>
+        <TouchableOpacity
+          style={styles.signupWrapper}
+          onPress={() => router.push("/signUp")}
+        >
           <Text style={styles.signupText}>DIDN'T HAVE ACCOUNT?</Text>
           <Text style={styles.signupNow}>SIGN UP NOW</Text>
         </TouchableOpacity>
@@ -56,94 +71,94 @@ const MainScreen = () => {
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    resizeMode: 'cover',
-    justifyContent: 'center',
+    resizeMode: "cover",
+    justifyContent: "center",
   },
   overlay: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     padding: 20,
-    backgroundColor: 'rgba(0, 0, 0, 0.6)', // Dark overlay effect
+    backgroundColor: "rgba(0, 0, 0, 0.6)", // Dark overlay effect
   },
   logo: {
     fontSize: 28,
-    fontWeight: 'bold',
-    color: '#fff',
+    fontWeight: "bold",
+    color: "#fff",
     marginBottom: 4,
   },
   tagline: {
     fontSize: 16,
-    color: '#C22EFF',
-    textAlign: 'center',
+    color: "#C22EFF",
+    textAlign: "center",
     marginBottom: 20,
-  },  
+  },
   title: {
     fontSize: 32,
-    fontWeight: 'bold',
-    color: '#fff',
-    textAlign: 'center',
+    fontWeight: "bold",
+    color: "#fff",
+    textAlign: "center",
     marginBottom: 40,
   },
   highlight: {
-    color: '#C22EFF', // Gradient color effect for "Started!"
+    color: "#C22EFF", // Gradient color effect for "Started!"
   },
   signInButton: {
-    backgroundColor: '#C22EFF',
+    backgroundColor: "#C22EFF",
     paddingVertical: 10,
-    width: '90%',
+    width: "90%",
     borderRadius: 20,
-    alignItems: 'center',
+    alignItems: "center",
     marginVertical: 20,
   },
   signInText: {
-    color: '#fff',
+    color: "#fff",
     fontSize: 18,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   orText: {
-    color: '#aaa',
+    color: "#aaa",
     fontSize: 14,
     marginTop: 15,
   },
   iconContainer: {
-    flexDirection: 'row',
+    flexDirection: "row",
     marginTop: 15,
   },
   iconWrapper: {
     padding: 15,
     borderWidth: 2,
-    borderColor: '#C22EFF',
+    borderColor: "#C22EFF",
     borderRadius: 50,
     marginHorizontal: 10,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
   knowMoreText: {
-    color: '#007BFF',
+    color: "#007BFF",
     marginTop: 20,
-    textDecorationLine: 'underline',
+    textDecorationLine: "underline",
     fontSize: 14,
   },
   /* Divider line for sign-up section */
   divider: {
-    width: '100%',
+    width: "100%",
     height: 1,
-    backgroundColor: '#aaa', // Line color
-   margin: 20,
+    backgroundColor: "#aaa", // Line color
+    margin: 20,
   },
   signupWrapper: {
     marginTop: 10,
-    alignItems: 'center',
+    alignItems: "center",
   },
   signupText: {
-    color: '#aaa',
+    color: "#aaa",
     fontSize: 14,
   },
   signupNow: {
-    color: '#C22EFF',
-    fontWeight: 'bold',
-    textDecorationLine: 'underline',
+    color: "#C22EFF",
+    fontWeight: "bold",
+    textDecorationLine: "underline",
   },
 });
 
