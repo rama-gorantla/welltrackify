@@ -1,5 +1,6 @@
 Email : welltrackify@gmail.com
 Password : Welltrackify@123
 
+MongeDB
 Username : welltrackify
-MongeDB : BXH6fdk48lETCULO
+Password : BXH6fdk48lETCULO
