@@ -47,7 +47,7 @@ const SignUp = () => {
 
   const handleSignUp = () => {
     if (validateForm()) {
-    //   router.push('/home');
+      router.push('/customerDetailsOne');
     }
   };
 
@@ -206,8 +206,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginLeft: 10,
     alignSelf: 'flex-start',
-    position: 'relative',
-    top: 60,
+    marginTop: 10,
   },
   loginText: {
     color: '#aaa',
