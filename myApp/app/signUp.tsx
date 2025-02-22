@@ -46,9 +46,9 @@ const SignUp = () => {
   };
 
   const handleSignUp = () => {
-    if (validateForm()) {
+    // if (validateForm()) {
       router.push('/customerDetailsOne');
-    }
+    // }
   };
 
   return (
