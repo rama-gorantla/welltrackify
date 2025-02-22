@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 20,
-    backgroundColor: "rgba(0, 0, 0, 0.6)", // Dark overlay effect
+    backgroundColor: '#0A021F',
   },
   logo: {
     fontSize: 28,
