@@ -13,12 +13,12 @@ interface Feature {
 }
 
 const features: Feature[] = [
-  { id: "1", title: "Activity Tracking", subtitle: "Monitor your workouts & progress.", icon: "bar-chart", screen: "features/activityTracking" },
-  { id: "2", title: "Payment Details", subtitle: "View and manage your payments.", icon: "card", screen: "features/paymentDetails" },
-  { id: "3", title: "Nutritional Recommendations", subtitle: "Personalized diet suggestions.", icon: "restaurant", screen: "features/nutritionalRecommends" },
-  { id: "4", title: "Class Recorded Videos", subtitle: "Access past session recordings.", icon: "videocam", screen: "features/classRecords" },
-  { id: "5", title: "Music", subtitle: "Listen to motivational tracks.", icon: "musical-notes", screen: "features/music" },
-  { id: "6", title: "Social Connections", subtitle: "Engage with your batchmates.", icon: "people", screen: "features/socialConnections" },
+  { id: "1", title: "Activity Tracking", subtitle: "Monitor your workouts & progress.", icon: "bar-chart", screen: "activityTracking" },
+  { id: "2", title: "Payment Details", subtitle: "View and manage your payments.", icon: "card", screen: "paymentDetails" },
+  { id: "3", title: "Nutritional Recommendations", subtitle: "Personalized diet suggestions.", icon: "restaurant", screen: "nutritionalRecommends" },
+  { id: "4", title: "Class Recorded Videos", subtitle: "Access past session recordings.", icon: "videocam", screen: "classRecords" },
+  { id: "5", title: "Music", subtitle: "Listen to motivational tracks.", icon: "musical-notes", screen: "music" },
+  { id: "6", title: "Social Connections", subtitle: "Engage with your batchmates.", icon: "people", screen: "socialConnections" },
 ];
 
 const FeaturesScreen = () => {
