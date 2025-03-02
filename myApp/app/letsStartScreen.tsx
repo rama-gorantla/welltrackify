@@ -12,7 +12,7 @@ const LetsStartScreen = () => {
       <Text style={styles.logo}>Welltrackify</Text>
       <Text style={styles.tagline}>Your Wellness, Your Way!</Text>
       
-      <TouchableOpacity style={styles.button} onPress={() => router.push('/')}>
+      <TouchableOpacity style={styles.button} onPress={() => router.push('/overViewScreen')}>
         <Text style={styles.buttonText}>Get Started!</Text>
       </TouchableOpacity>
     </View>

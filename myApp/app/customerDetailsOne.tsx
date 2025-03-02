@@ -1,24 +1,25 @@
+// screens/CustomerDetailsOne.tsx
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
 import { RadioButton } from 'react-native-paper';
-import { useRouter } from "expo-router";
-
+import { useRouter } from 'expo-router';
+import { useUser } from '../app/UserContext';
 
 const CustomerDetailsOne = () => {
-  const [name, setName] = useState(''); 
+  const [name, setNameInput] = useState('');
   const [age, setAge] = useState('');
   const [gender, setGender] = useState('');
   const [height, setHeight] = useState('');
   const [weight, setWeight] = useState('');
+  
 
-  // Function to allow only numeric values
-  const handleNumericInput = (text: string, setter: { (value: React.SetStateAction<string>): void; (value: React.SetStateAction<string>): void; (value: React.SetStateAction<string>): void; (arg0: any): void; }) => {
-    const numericText = text.replace(/[^0-9]/g, ''); // Remove non-numeric characters
+  const { setUserDetails } = useUser();
+  const router = useRouter();
+
+  const handleNumericInput = (text: string, setter: (value: string) => void) => {
+    const numericText = text.replace(/[^0-9]/g, '');
     setter(numericText);
   };
-
-    const router = useRouter();
-  
 
   return (
     <ScrollView contentContainerStyle={styles.scrollContainer}>
@@ -32,7 +33,7 @@ const CustomerDetailsOne = () => {
           placeholder="Enter your name"
           placeholderTextColor="#999"
           value={name}
-          onChangeText={setName}
+          onChangeText={setNameInput}
         />
 
         {/* Age Input */}
@@ -52,24 +53,24 @@ const CustomerDetailsOne = () => {
         <View style={styles.radioContainer}>
           <RadioButton
             value="male"
-            status={gender === "male" ? "checked" : "unchecked"}
-            onPress={() => setGender("male")}
+            status={gender === 'male' ? 'checked' : 'unchecked'}
+            onPress={() => setGender('male')}
             color="#9C27B0"
           />
           <Text style={styles.radioLabel}>Male</Text>
 
           <RadioButton
             value="female"
-            status={gender === "female" ? "checked" : "unchecked"}
-            onPress={() => setGender("female")}
+            status={gender === 'female' ? 'checked' : 'unchecked'}
+            onPress={() => setGender('female')}
             color="#9C27B0"
           />
           <Text style={styles.radioLabel}>Female</Text>
 
           <RadioButton
             value="other"
-            status={gender === "other" ? "checked" : "unchecked"}
-            onPress={() => setGender("other")}
+            status={gender === 'other' ? 'checked' : 'unchecked'}
+            onPress={() => setGender('other')}
             color="#9C27B0"
           />
           <Text style={styles.radioLabel}>Prefer not to say</Text>
@@ -100,9 +101,15 @@ const CustomerDetailsOne = () => {
         />
 
         {/* Continue Button */}
-        <TouchableOpacity style={styles.button}
-                onPress={() => router.push("/letsStartScreen")}
->
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => {
+            // Save all details in global context
+            setUserDetails({ name, age, gender, height, weight });
+            // Navigate directly to Dashboard
+            router.push('/letsStartScreen');
+          }}
+        >
           <Text style={styles.buttonText}>Continue</Text>
         </TouchableOpacity>
       </View>
